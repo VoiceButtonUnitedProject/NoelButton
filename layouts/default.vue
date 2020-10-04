@@ -84,7 +84,7 @@
       app
     >
       <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="$t('site.title') + ' 🌸'" />
+      <v-toolbar-title v-text="$t('site.title') + ' ⚔'" />
       <v-spacer />
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
@@ -177,7 +177,7 @@ $blur-function: blur(3px);
   }
 }
 .gradient-header-light {
-  background-image: linear-gradient(120deg, #ff6c9a 0%, #ffa3c0 100%) !important;
+  background-image: linear-gradient(120deg, #b0bec5 0%, #cfd8dc 100%) !important;
 }
 .gradient-header-dark {
   background-image: linear-gradient(120deg, #da5f86 0%, #cf869d 100%) !important;
