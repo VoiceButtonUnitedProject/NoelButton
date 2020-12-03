@@ -11,36 +11,55 @@ export default {
   },
   /*
    ** Headers of the page
+   * TODO
    */
   head: {
-    title: 'みこボタン',
+    title: 'ノエルボタン',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'さくらみこ　ボイスボタン; 樱巫女的语音按钮'
+        /**
+        * TODO
+        */
+        content: '夜空メル　ボイスボタン; 夜空梅露的语音按钮'
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'みこボタン,MIKO BUTTON,樱按钮,hololive,Sakura Miko,さくらみこ,35P,樱巫女,语音按钮,ボイスボタン'
+        /**
+        * TODO
+        */
+        content: 'メルボタン,MEL BUTTON,梅露按钮,hololive,Yozora Mel,夜空メル,夜空梅露,语音按钮,ボイスボタン'
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'みこボタン' },
+      /**
+        * TODO
+        */
+      { hid: 'og:site_name', property: 'og:site_name', content: 'メルボタン' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://sakuramiko.org' },
-      { hid: 'og:title', property: 'og:title', content: 'みこボタン' },
+      { hid: 'og:url', property: 'og:url', content: 'https://yozoramel.org' },
+      { hid: 'og:title', property: 'og:title', content: 'メルボタン' },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'さくらみこのボイスボタン。'
+        /**
+        * TODO
+        */
+        content: '夜空メルのボイスボタン。'
       },
-      { hid: 'og:image', property: 'og:image', content: 'https://sakuramiko.org/img/og_common.jpg' },
+      /**
+        * TODO
+        */
+      { hid: 'og:image', property: 'og:image', content: 'https://yozoramel.org/img/tweet.jpg' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@samuimomijiyuki' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    /**
+        * TODO
+        */
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f31f.svg' }]
   },
   /*
    ** Customize the progress-bar color
@@ -73,11 +92,15 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    /**
+     * TODO
+     * 颜色
+     */
     theme: {
       dark: false,
       themes: {
         light: {
-          primary: colors.grey.base,
+          primary: colors.amber.base,
           secondary: colors.grey.darken4,
           accent: colors.blue.lighten2,
           error: colors.deepOrange.base,
@@ -86,7 +109,7 @@ export default {
           success: colors.teal.base
         },
         dark: {
-          primary: colors.grey.lighten1,
+          primary: colors.amber.lighten1,
           secondary: colors.grey.darken4,
           accent: colors.lightBlue.darken4,
           error: colors.deepOrange.accent4,
@@ -102,16 +125,23 @@ export default {
     }
   },
   pwa: {
+    /**
+     * TODO
+     * PWA
+     */
     manifest: {
       start_url: '/?standalone=true',
-      name: 'みこボタン'
+      name: 'メルボタン'
     },
     workbox: {
       swURL: '/service-worker.js',
       skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: 'https://cdn.jsdelivr.net/gh/voosc/miko-button@master/static/voices/*'
+          /**
+        * TODO
+        */
+          urlPattern: 'https://cdn.jsdelivr.net/gh/voosc/mel-button@master/static/voices/*'
         }
       ]
     }
@@ -125,7 +155,10 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://sakuramiko.org',
+    /**
+        * TODO
+        */
+    hostname: 'https://yozoramel.org',
     routes: [
       {
         url: '/',

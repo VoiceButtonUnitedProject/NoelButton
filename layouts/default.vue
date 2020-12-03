@@ -84,7 +84,7 @@
       app
     >
       <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="$t('site.title') + ' ⚔'" />
+      <v-toolbar-title v-text="$t('site.title') + ' 🌟'" />
       <v-spacer />
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
@@ -112,9 +112,6 @@
           <v-list-item id="lang-switch-ja" @click="switch_lang('ja')">
             <v-list-item-title>日本語</v-list-item-title>
           </v-list-item>
-          <v-list-item id="lang-switch-en" @click="switch_lang('en')">
-            <v-list-item-title>English</v-list-item-title>
-          </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -125,9 +122,10 @@
       <v-footer :fixed="false">
         <div>
           <div style="vertical-align: middle;">
+            <!-- TODO 页脚 作者地址 仓库地址 -->
             <span>&copy;</span>
             <span>
-              <a href="https://space.bilibili.com/487446531" target="_blank" rel="noreferrer">
+              <a href="https://space.bilibili.com/490670563" target="_blank" rel="noreferrer">
                 {{ $t('site.footer.union') }}
               </a>
             </span>
@@ -137,9 +135,10 @@
                 {{ $t('site.footer.voosc') }}
               </a>
             </span>
+            <!-- TODO -->
             <v-btn
               icon
-              href="https://github.com/voosc/miko-button"
+              href="https://github.com/voosc/mel-button"
               target="_blank"
               style="vertical-align: middle;"
               rel="noreferrer"
@@ -149,7 +148,7 @@
           </div>
           <div>
             <span>Powered by</span>
-            <a href="https://www.vercel.com/?utm_source=oruyanke&utm_campaign=oss" target="_blank" rel="noreferrer">
+            <a href="https://www.vercel.com/?utm_source=vbuposc&utm_campaign=oss" target="_blank" rel="noreferrer">
               <img :src="vercel_logo" alt="vercel" height="16px" />
             </a>
           </div>
@@ -166,9 +165,6 @@
 <style lang="scss">
 $blur-function: blur(3px);
 .v-application {
-  html[lang='en'] & {
-    font-family: $en-body-fonts;
-  }
   html[lang='ja'] & {
     font-family: $ja-body-fonts;
   }
@@ -177,10 +173,10 @@ $blur-function: blur(3px);
   }
 }
 .gradient-header-light {
-  background-image: linear-gradient(120deg, #b0bec5 0%, #cfd8dc 100%) !important;
+  background-image: linear-gradient(120deg, #ffab00 0%, #fbc02d 100%) !important;
 }
 .gradient-header-dark {
-  background-image: linear-gradient(120deg, #da5f86 0%, #cf869d 100%) !important;
+  background-image: linear-gradient(120deg, #ffa000 0%, #f9a825 100%) !important;
 }
 .nav-drawer-img {
   width: auto;
@@ -243,33 +239,38 @@ export default {
       },
       drawer: false,
       fixed: false,
+      /**
+       * TODO
+       * 各种外链
+       */
       nav_items: [
         {
           icon: '/img/youtube-fill.svg',
           title: 'Youtube',
-          to: 'https://www.youtube.com/channel/UC-hM6YJuNYVAmUWxeIr9FeA?sub_confirmation=1'
+          to: 'https://www.youtube.com/channel/UCD8HOxPs4Xvsm8H0ZxXGiBw'
         },
         {
+          /*TODO*/
           icon: '/img/twitter-fill.svg',
           title: 'Twitter',
-          to: 'https://twitter.com/sakuramiko35'
+          to: 'https://twitter.com/yozoramel'
         },
         {
           icon: '/img/bilibili-fill.svg',
           title: 'Bilibili',
-          to: 'https://space.bilibili.com/366690056'
+          to: 'https://space.bilibili.com/389856447'
         }
       ],
       external_cn: [
         {
           icon: 'alpha_b_box',
-          title: '赌鬼巫女保护协会',
-          to: 'https://space.bilibili.com/487446531/'
+          title: '夜空梅露的樱桃汁工厂',
+          to: 'https://space.bilibili.com/490670563/'
         },
         {
           icon: 'newspaper',
-          title: '樱花神社周报',
-          to: 'https://www.bilibili.com/read/readlist/rl291775'
+          title: '樱桃汁工厂周报',
+          to: 'https://www.bilibili.com/read/readlist/rl250085'
         }
       ]
     };

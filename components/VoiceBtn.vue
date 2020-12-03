@@ -28,7 +28,7 @@ export default {
   name: 'VoiceBtn',
   props: {
     emoji: {
-      default: '🌸',
+      default: '🌟',
       type: String
     }
   },
@@ -78,11 +78,11 @@ $nonlinear-transition: cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 .vo-btn-bg-light {
-  background: linear-gradient(to right, #90a4ae var(--start-percent), #b0bec5 var(--progress));
+  background: linear-gradient(to right, #ffab00 var(--start-percent), #fbc02d var(--progress));
 }
 
 .vo-btn-bg-dark {
-  background: linear-gradient(to right, #78909c var(--start-percent), #90a4ae var(--progress));
+  background: linear-gradient(to right, #ffa000 var(--start-percent), #ffab00 var(--progress));
 }
 
 .vo-btn div {

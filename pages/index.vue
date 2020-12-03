@@ -136,8 +136,8 @@
 <style lang="scss" scoped>
 $nonlinear-transition: cubic-bezier(0.25, 0.8, 0.5, 1);
 .v-card {
+  border-radius: 20px !important;
   margin: 8px auto;
-  border-radius: 20px;
 }
 
 .fab-tip {
@@ -214,8 +214,12 @@ export default {
   },
   computed: {
     voice_host() {
+      /**
+       * TODO
+       * CDN地址，没有的话就删掉
+       */
       if (process.env.NODE_ENV === 'production')
-        return 'https://cdn.jsdelivr.net/gh/voosc/miko-button@master/static/voices/';
+        return 'https://cdn.jsdelivr.net/gh/voosc/mel-button@master/static/voices/';
       else return '/voices/';
     },
     dark_text() {
@@ -230,13 +234,13 @@ export default {
       };
     },
     fab_icon() {
-      return [this.$vuetify.theme.dark ? 'white--text' : 'gray--text text--lighten-3'];
+      return [this.$vuetify.theme.dark ? 'white--text' : 'amber--text text--lighten-3'];
     },
     fab_color() {
-      return [this.$vuetify.theme.dark ? 'blue-grey lighten-1' : 'white'];
+      return [this.$vuetify.theme.dark ? 'amber darken-1' : 'white'];
     },
     speed_dial_color: function () {
-      return [this.$vuetify.theme.dark ? 'blue-grey darken-1' : 'blue-grey lighten-1'];
+      return [this.$vuetify.theme.dark ? 'amber darken-1' : 'amber lighten-2'];
     },
     current_locale() {
       return this.$i18n.locale;
@@ -274,7 +278,11 @@ export default {
   methods: {
     async fetch_live_data() {
       const query_url = 'https://api.holotools.app/v1/live?max_upcoming_hours=336';
-      const channel = 12; // HoloAPI ID
+      /**
+       * TODO
+       * HoloAPI
+       */
+      const channel = 1; // HoloAPI ID
       this.$axios
         .get(query_url, { params: { channel_id: channel } })
         .then(res => {
@@ -293,7 +301,11 @@ export default {
       return require('dayjs')(stamp).format('YYYY/M/DD HH:mm');
     },
     youtube() {
-      this.$axios.get('https://api.holotools.app/v1/channels/youtube/UC-hM6YJuNYVAmUWxeIr9FeA').then(response => {
+      /**
+       * TODO
+       * 油管订阅数，需要修改ID
+       */
+      this.$axios.get('https://api.holotools.app/v1/channels/youtube/UCD8HOxPs4Xvsm8H0ZxXGiBw').then(response => {
         this.youtubeData = response.data;
       });
     },
@@ -301,32 +313,27 @@ export default {
       let random_list = this.groups[this.get_random_int(this.groups.length)].voice_list;
       var title = random_list[this.get_random_int(random_list.length)].description[this.current_locale];
       var res = document.getElementById('share').value;
+      /**
+       * TODO
+       * 每日随机，改文案，改url
+       */
       if (this.current_locale === 'ja') {
         window.open(
           'https://twitter.com/intent/tweet?text=' +
-            '%23みこボタン %23さくらみこ 今日、「' +
+            '%23メルボタン %23夜空メル %23メルArt 今日、「' +
             res +
             '」のランダムオーディオは「' +
             title +
-            '」です！ より多くのオーディオを聞くには、「みこボタン」のWebサイトにアクセスしてください~ https://sakuramiko.org'
-        );
-      } else if (this.current_locale === 'en') {
-        window.open(
-          'https://twitter.com/intent/tweet?text=' +
-            '%23みこボタン %23さくらみこ Today,' +
-            res +
-            "'s random audio is %22" +
-            title +
-            '%22! Visit Miko Button Website For More Audio! https://sakuramiko.org'
+            '」です！ より多くのオーディオを聞くには、「メルボタン」のWebサイトにアクセスしてください~ https://yozoramel.org'
         );
       } else {
         window.open(
           'https://twitter.com/intent/tweet?text=' +
-            '%23みこボタン %23さくらみこ 今天，“' +
+            '%23メルボタン %23夜空メル %23メルArt 今天，“' +
             res +
             '”的随机音频是“' +
             title +
-            '”！ 访问樱按钮网站聆听更多音频 https://sakuramiko.org'
+            '”！ 访问梅露按钮网站聆听更多音频 https://yozoramel.org'
         );
       }
     },
@@ -378,6 +385,10 @@ export default {
           title: this.overlap ? this.$t('control.overlap_title') : item.description[this.current_locale],
           artist: this.$t('control.full_name'),
           album: this.$t('site.title') + '( - △ - )',
+          /**
+           * TODO
+           * mediaSession显示的图片
+           */
           artwork: [{ src: '/img/media-cover.jpg', sizes: '128x128', type: 'image/jpeg' }]
         };
         navigator.mediaSession.metadata = new window.MediaMetadata(metadata);
@@ -432,10 +443,13 @@ export default {
       this.$bus.$emit('abort_play');
     }
   },
+  /**
+   * TODO
+   */
   head() {
     return {
       title: this.$t('site.title'),
-      link: [{ rel: 'canonical', href: 'https://sakuramiko.org' }]
+      link: [{ rel: 'canonical', href: 'https://yozoramel.org' }]
     };
   }
 };
